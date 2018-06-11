@@ -1,0 +1,23 @@
+<h1>Mon blog</h1>
+<% @articles.each do |article| %>
+<h2><%= article.title %> - <%= "*" * article.star %></h2>
+<p><b><%= article.created_at %></b></p>
+<% end %>
+
+<div class="text-center">
+<h1>Mon blog</h1>
+</div>
+<div class="container">
+<div class="row">
+<% @articles.each do |article| %>
+<div class="col-12">
+<div class="shadow bg-white rounded p-4 d-flex justify-content-between">
+<h2><%= article.title %> - <%= "⭐" * article.stars %></h2>
+<p><b><%= article.created_at.strftime("%D") %></b></p>
+</div>
+</div>
+<% end %>
+</div>
+</div>
+
+<%= link_to "New article", new_article_path, class: "btn btn-primary" %>
